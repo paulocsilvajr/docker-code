@@ -1,0 +1,8 @@
+# No arquivo run_dockerfile.sh pode-se definir qual dockerfile
+# será executado e alterar o nome da imagem e do container gerado
+# pelas variáveis DOCKERFILE, IMAGEM e CONTAINER
+# Obs: È removido a imagem com o nome informado para evitar cópias indesejadas.
+#
+# No arquivo run.sh é obrigatório informar um dockerfile existente
+# e um nome para a imagem. Opcionalmente pode-se informar o nome
+# do container, caso seja omitido, assume-se o nome da imagem.

@@ -1,0 +1,2 @@
+# Foi definido nos dockerfiles do ruby o encoding para UTF-8
+ENV LANG C.UTF-8
