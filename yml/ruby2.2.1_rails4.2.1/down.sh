@@ -1,5 +1,5 @@
 #!/bin/bash
-PROJETO="/home/kdepaulo/docker/yml/ruby2.2.1_rails4.2.1/myapp"
+PROJETO=$(cat pasta_projeto.txt)
 
 if [ "$(pwd)" == $PROJETO ]; then
     docker-compose down
