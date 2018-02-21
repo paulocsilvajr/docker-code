@@ -1,0 +1,2 @@
+fonte: https://docs.docker.com/compose/rails/#define-the-project
+Dockerfile baseado nas versão necessárias para o curso: https://cursos.alura.com.br/course/ruby-on-rails-4-do-zero/task/10285
