@@ -4,7 +4,9 @@ PROJETO=$(cat pasta_projeto.txt)
 if [ "$(pwd)" == $PROJETO ]; then
     echo "Recriando imagem com Gemfile atualizado"
     NOME_IMAGEM="myapp_web"
-    ID_REMOCAO=$(docker ps -q $NOME_IMAGEM)
+    ID_REMOCAO=$(docker images -q $NOME_IMAGEM)
+
+    docker rmi $ID_REMOCAO
 
     docker-compose build
 
@@ -12,7 +14,6 @@ if [ "$(pwd)" == $PROJETO ]; then
     docker images | grep $NOME_IMAGEM
 
     docker container prune -f
-    docker rmi $ID_REMOCAO
 
     echo -e "\n\nVerifique com 'docker images' se foi criado uma imagem sem nome e remova-a com 'docker rmi ID'"
 else
