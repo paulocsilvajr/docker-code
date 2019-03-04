@@ -26,10 +26,9 @@ make_base() {
 
 make_img() {
     # para e remove o conteiner e remove a imagem antiga
-    echo "Removendo imagem e conteiner antigo"
-    docker stop $NOME_CONTAINER && \
-    docker rm $NOME_CONTAINER && \
-    docker rmi $NOME_IMG && echo
+    docker stop $NOME_CONTAINER && echo "Removido conteiner antigo"
+    docker rmi $NOME_IMG && echo -e "Removido imagem antiga\n"
+    # docker rm $NOME_CONTAINER && \
 
     # constroi a nova imagem baseado no Dockerfile
     docker build -t $NOME_IMG $DIR_ATUAL/. && \
@@ -38,8 +37,8 @@ make_img() {
 }
 
 run_container() {
-    # cria o conteiner com o nome informado em NOME_CONTAINER
-    docker run -d --name=$NOME_CONTAINER $NOME_IMG && \
+    # cria o conteiner descartável(--rm) com o nome informado em NOME_CONTAINER
+    docker run -d --rm --name=$NOME_CONTAINER $NOME_IMG && \
     echo -e "\n\nCriado conteiner [$NOME_CONTAINER] baseado na imagem [$NOME_IMG]\n" && \
     docker ps -a | grep $NOME_CONTAINER && \
     docker inspect $NOME_CONTAINER --format='{{json .NetworkSettings}}' $INSTANCE_ID || \
