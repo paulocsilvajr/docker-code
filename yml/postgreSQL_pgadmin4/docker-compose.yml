@@ -21,7 +21,6 @@ services:
       - "16543:80"
     volumes:
       - /home/docker/pgadmin:/var/lib/pgadmin
-      - /home/docker/tmp/servers.json:/servers.json
     depends_on:
       - postgres-compose
     networks:
