@@ -13,7 +13,7 @@ services:
       - postgres-network
       
   pgadmin-compose:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:4.15
     environment:
       PGADMIN_DEFAULT_EMAIL: "pauluscave@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "PgAdmin2019!"
