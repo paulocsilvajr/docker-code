@@ -1,1 +1,1 @@
-docker network inspect postgresqlpgadmin4_postgres-network
+docker network inspect postgresql_pgadmin4_postgres-network
