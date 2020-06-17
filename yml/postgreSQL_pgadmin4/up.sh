@@ -1,1 +1,1 @@
-docker-compose up -d
+docker-compose -p postgresqlpgadmin4 up -d

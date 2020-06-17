@@ -1,1 +1,1 @@
-docker-compose ps
+docker-compose -p postgresqlpgadmin4 ps
