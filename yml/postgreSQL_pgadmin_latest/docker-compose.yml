@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgres-latest-compose:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: "Postgres2020!"
+    ports:
+      - "25432:5432"
+    volumes:
+      - /home/docker/postgresql-data-latest:/var/lib/postgresql/data 
+    networks:
+      - postgres-latest-network
+      
+  pgadmin-latest-compose:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "pauluscave@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "PgAdmin2020!"
+    ports:
+      - "20080:80"
+    volumes:
+      - /home/docker/pgadmin-latest:/var/lib/pgadmin
+    depends_on:
+      - postgres-latest-compose
+    networks:
+      - postgres-latest-network
+
+networks: 
+    postgres-latest-network:
