@@ -9,6 +9,6 @@ Na primeira conexão ao PGAdmin, deve ser alterado a configuração da conexão 
     Password: Postgres2020!
     Save password? SIM/marcar
 
-Use o comando 'down.sh' para derrubar e remover os containers criados.
+Use o comando 'down.sh' para derrubar e remover os containers criados. As configurações e bancos criados serão persistidos por causa dos volumes criados em /home/docker.
 
 Detalhes da criação dos containers e imagens do docker no arquivo 'docker-compose.yml'.
