@@ -11,6 +11,7 @@ echo_azul() {
 if [ ! -d "$DIRPOSTGRES" ] || [ ! -d "$DIRPGADMIN" ]; then
     echo -n "Criando diretórios de volumes do PostgreSQL e PgAdmin em $DIRBASE como root" &&
     sudo mkdir "$DIRPOSTGRES" "$DIRPGADMIN" &&
+    sudo chown -R 5050:5050 "$DIRPGADMIN" &&
     sudo chmod 777 "$DIRPOSTGRES" "$DIRPGADMIN" &&
     echo -n " - " &&  echo_azul "OK"
 else
