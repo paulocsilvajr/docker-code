@@ -10,3 +10,5 @@ Para habilitar o LOG, substitua o arquivo '/home/docker/postgresql-data-latest/p
 LOGs são gerados na pasta '/home/docker/postgresql-data-latest/log'
 
 OBS: No PGAdmin, existe a aba DASHBOARD que gera gráficos em realtime. Esses gráficos são gerados a partir de consultas no banco, gerando LOG a todo o momento. Feche essa aba para evitar criar logs desnecessários e o aumento contínuo do arquivo de log.
+
+Fonte: https://pt.stackoverflow.com/questions/219770/como-verificar-os-logs-do-postgresql
