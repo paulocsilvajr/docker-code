@@ -1,0 +1,12 @@
+Nessa pasta está um exemplo do arquivo 'postgresql.conf' para habilitar o LOG para todos os statements do PostgreSQL.
+Nesse arquivo foi habilitado os seguintes parametros:
+log_statement = 'all'
+log_destination = 'stderr'
+logging_collector = on
+log_min_duration_statement = 0
+log_filename = 'postgresql-%F.log'
+
+Para habilitar o LOG, substitua o arquivo '/home/docker/postgresql-data-latest/postgresql.conf' por este desta pasta ou altera no arquivo citado os parametros acima informados.
+LOGs são gerados na pasta '/home/docker/postgresql-data-latest/log'
+
+OBS: No PGAdmin, existe a aba DASHBOARD que gera gráficos em realtime. Esses gráficos são gerados a partir de consultas no banco, gerando LOG a todo o momento. Feche essa aba para evitar criar logs desnecessários e o aumento contínuo do arquivo de log.
