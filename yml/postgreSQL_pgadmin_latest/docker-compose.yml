@@ -2,13 +2,13 @@ version: '3'
 
 services:
   postgres-latest-compose:
-    image: postgres:latest
+    image: postgres:12
     environment:
       POSTGRES_PASSWORD: "Postgres2020!"
     ports:
       - "25432:5432"
     volumes:
-      - /home/docker/postgresql-data-latest:/var/lib/postgresql/data 
+      - /home/docker/postgresql12-data:/var/lib/postgresql/data 
     networks:
       - postgres-latest-network
       
