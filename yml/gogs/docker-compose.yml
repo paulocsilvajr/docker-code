@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  gogs-compose:
+    image: gogs/gogs
+    restart: always
+    ports:
+      - "10022:22"
+      - "13000:3000"
+    volumes:
+      - ./data:/data 
+    networks:
+      - gogs-network
+
+networks: 
+    gogs-network:
