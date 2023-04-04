@@ -1,0 +1,28 @@
+version: "2.1"
+services:
+  linuxserver_nextcloud_db:
+    image: mariadb:10.5
+    container_name: linuxserver_mariadb
+    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    volumes:
+      - ./data/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=MSr@175937592
+      - MYSQL_PASSWORD=NC@17539943
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  linuxserver_nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: linuxserver_nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    links:
+      - linuxserver_nextcloud_db
+    volumes:
+      - ./data/appdata:/config
+      - ./data/data:/data
+    ports:
+      - 8443:443
