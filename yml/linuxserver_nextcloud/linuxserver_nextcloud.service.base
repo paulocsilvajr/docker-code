@@ -1,9 +1,8 @@
 [Unit]
 Description=Servidor NextCloud com volume em BTRFS
 [Service]
-Type=simple
-Restart=always
-RestartSec=1
+Type=oneshot
+RemainAfterExit=true
 ExecStart=$SCRIPTINICIO
 ExecStop=$SCRIPTFIM
  

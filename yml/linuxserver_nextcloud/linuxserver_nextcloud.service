@@ -1,0 +1,10 @@
+[Unit]
+Description=Servidor NextCloud com volume em BTRFS
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/home/paulo/repositorios/docker-code/yml/linuxserver_nextcloud/linuxserver_nextcloud_up.sh
+ExecStop=/home/paulo/repositorios/docker-code/yml/linuxserver_nextcloud/linuxserver_nextcloud_down.sh
+ 
+[Install]
+WantedBy=multi-user.target
