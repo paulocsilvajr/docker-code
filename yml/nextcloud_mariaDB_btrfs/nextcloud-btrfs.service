@@ -1,0 +1,10 @@
+[Unit]
+Description=Servidor NextCloud com volume em BTRFS
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/home/paulo/repositorios/docker-code/yml/nextcloud_mariaDB_btrfs/nextcloud-btrfs_up.sh
+ExecStop=/home/paulo/repositorios/docker-code/yml/nextcloud_mariaDB_btrfs/nextcloud-btrfs_down.sh
+ 
+[Install]
+WantedBy=multi-user.target

@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-docker-compose ps
+BASE=$(dirname $0)
+
+docker-compose -p nextcloud-btrfs -f $BASE/docker-compose.yml ps
