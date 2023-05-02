@@ -1,0 +1,10 @@
+[Unit]
+Description=Servidor NextCloud com volume em BTRFS
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=$SCRIPTINICIO
+ExecStop=$SCRIPTFIM
+ 
+[Install]
+WantedBy=multi-user.target

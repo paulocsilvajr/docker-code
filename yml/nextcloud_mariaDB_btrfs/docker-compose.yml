@@ -1,9 +1,9 @@
 version: '2'
 
 services:
-  db:
+  nextcloud-btrfs-db:
     image: mariadb:10.5
-    restart: always
+    container_name: nextcloud-btrfs-container-db
     command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
     volumes:
       - ./data/db:/var/lib/mysql
@@ -13,13 +13,13 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
 
-  app:
-    image: nextcloud
-    restart: always
+  nextcloud-btrfs-app:
+    image: nextcloud:latest
+    container_name: nextcloud-btrfs-container-app
     ports:
       - 8082:80
     links:
-      - db
+      - nextcloud-btrfs-db
     volumes:
       - ./data/nextcloud:/var/www/html
     environment:

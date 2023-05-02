@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-docker-compose down && 
+docker-compose -p nextcloud-btrfs -f $BASE/docker-compose.yml down && 
     ./umount_volume.sh
