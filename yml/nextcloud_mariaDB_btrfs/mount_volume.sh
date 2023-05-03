@@ -15,4 +15,3 @@ echo "Montando '$ARQUIVO' em '$MONTAGEM'... " &&
     sudo btrfs subvolume create "${MONTAGEM}/db"
 
 df -hT "$MONTAGEM"
-
