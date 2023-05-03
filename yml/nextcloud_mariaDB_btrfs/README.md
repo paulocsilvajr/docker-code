@@ -26,6 +26,10 @@ ps.sh: Lista os serviços associados ao docker-compose.yml, exibindo seu estado.
 gerar_servico.sh: Script para gerar o serviço 'nextcloud-btrfs.service' para usar os conteineres
 como um serviço do Systemd. Gera os arquivo 'nextcloud-btrfs_up.sh', 'nextcloud-btrfs_down.sh' e 'nextcloud-btrfs.service'.
 
+remover_servico.sh: Para e remove o serviço 'nextcloud-btrfs.service' do Systemd.
+
+log_mariadb.sh e log_nextcloud.sh: Exibe o log(últimas 30 linhas) dos serviços do NextCloud e MariaDB.
+
 .gitignore: arquivo com as excessões para o git.
 
 fontes.txt: links associados a esse projeto.
