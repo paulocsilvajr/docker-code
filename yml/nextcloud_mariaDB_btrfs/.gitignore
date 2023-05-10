@@ -3,3 +3,5 @@ volume.img
 nextcloud-btrfs_up.sh
 nextcloud-btrfs_down.sh
 nextcloud-btrfs.service
+conf.d/cert.pem
+conf.d/key.pem

@@ -27,3 +27,14 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=nextcloud-btrfs-db
+
+  nextcloud-btrfs-proxy:
+    image: nginx:latest
+    container_name: nextcloud-btrfs-container-proxy
+    ports:
+      - 10443:443
+    depends_on:
+      - nextcloud-btrfs-db
+      - nextcloud-btrfs-app
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d

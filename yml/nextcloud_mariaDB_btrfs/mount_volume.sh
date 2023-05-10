@@ -7,11 +7,16 @@ ARQUIVO="${BASE}/${ARQUIVO}"
 
 MONTAGEM="${BASE}/data"
 
-sudo mkdir -vp "$MONTAGEM"
+if [ -f "$ARQUIVO" ]; then
+    sudo mkdir -vp "$MONTAGEM"
 
-echo "Montando '$ARQUIVO' em '$MONTAGEM'... " &&
-    sudo mount -o loop -v "$ARQUIVO" "$MONTAGEM" &&
-    sudo btrfs subvolume create "${MONTAGEM}/nextcloud" &&
-    sudo btrfs subvolume create "${MONTAGEM}/db"
+    echo "Montando '$ARQUIVO' em '$MONTAGEM'... " &&
+        sudo mount -o loop -v "$ARQUIVO" "$MONTAGEM" &&
+        sudo btrfs subvolume create "${MONTAGEM}/nextcloud" &&
+        sudo btrfs subvolume create "${MONTAGEM}/db"
 
-df -hT "$MONTAGEM"
+    df -hT "$MONTAGEM"
+else
+    echo "Crie o arquivo '$ARQUIVO' com o script 'create_volume_btrfs.sh'"
+    exit 1
+fi
