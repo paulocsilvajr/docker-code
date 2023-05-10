@@ -1,1 +1,2 @@
 https://hub.docker.com/_/nextcloud
+https://help.nextcloud.com/t/nextcloud-with-docker-compose-behind-reverse-proxy-nginx-with-proxy-pass-leaking-images/147437
