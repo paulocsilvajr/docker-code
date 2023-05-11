@@ -32,7 +32,7 @@ services:
     image: nginx:latest
     container_name: nextcloud-btrfs-container-proxy
     ports:
-      - 10443:443
+      - 8083:443
     depends_on:
       - nextcloud-btrfs-db
       - nextcloud-btrfs-app
