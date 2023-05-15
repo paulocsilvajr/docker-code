@@ -16,8 +16,6 @@ services:
   nextcloud-btrfs-app:
     image: nextcloud:latest
     container_name: nextcloud-btrfs-container-app
-    ports:
-      - 8082:80
     links:
       - nextcloud-btrfs-db
     volumes:
