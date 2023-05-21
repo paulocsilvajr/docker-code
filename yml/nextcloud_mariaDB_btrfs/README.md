@@ -2,11 +2,13 @@
 
 Este repositório cria um conteiner Docker do [NextCloud](https://nextcloud.com/), baseado nos modelos apresentados no [Docker Hub do NextCloud](https://hub.docker.com/_/nextcloud), e um conteiner MariaDB para o banco de dados. Para isolar o armazenamento, foi criado um arquivo formatado como BTRFS, com armazenamento de 20GiB. Esse arquivo é montado, por padrão, na pasta 'data' do diretório atual. Com o formato BTRFS do volume é possivel criar snapshots dos subvolumes 'db' e 'nextcloud'.
 
-Nextcloud disponível em **https:\\localhost:8083** após sua montagem via docker-compose. Foi configurado o redirecionamento via Proxy Reverso do Nginx para disponibilizar o Nextcloud via HTTPS.
+Nextcloud disponível em **https://localhost:8083** após sua montagem via docker-compose. Foi configurado o redirecionamento via Proxy Reverso do Nginx para disponibilizar o Nextcloud via HTTPS.
 
 Para a primeira inicialização, deve-se criar o volume 'volume.img' com o script *create_volume_btrfs.sh*. Também deve-se criar os certificados(auto assinados) via script 'generate_certificate.sh'.
 
 Deve-se usar os scripts *up.sh* e *down.sh* para inicializar e parar os serviços, porque estes montam e desmontam o volume virtual da imagem BTRFS em pasta *data*.
+
+Depois de acessar a primeira vez a rota *https://localhost.com.br*, execute o script *./reconfigure_config.php.sh*, para que seja adicionado no arquivo de configuração do Apache(config.php) do Nextcloud as definições necessárias para o redirecionamento HTTPs via Nginx funcione. Reinicie os serviços do Nextcloud com os scripts *down.sh* e *up.sh* e acesse novamente a rota inicial.
 
 Foi criado scripts para usar esses conteineres como serviços do Systemd. Pare os conteineres com o script *down.sh* e use o script *generate_service.sh* para criar o serviço do sistema. Use o comando *systemctl*(start|status|stop) para gerenciar o servico **nextcloud-btrfs.service**.
 
@@ -24,7 +26,7 @@ down.sh: Desmonta o volume BTRFS e finaliza os serviços citados acima.
 mount_volume.sh e umount_volume.sh: Monta e desmonta o volume BTRFS de pasta 'data'. Scripts usados internamente pelos scripts up.sh e down.sh.
 
 reconfigure_config.php.sh: Altera o arquivo de configuração './data/nextcloud/config/config.php' adicionando os atributos('overwritehost' e 'overwriteprotocol') que habilitam o redirecionamento
-HTTPS via Nginx.
+HTTPS via Nginx. Esse arquivo de configuração somente é criado após o primeiro acesso à rota inicial.
 
 ps.sh: Lista os serviços associados ao docker-compose.yml, exibindo seu estado.
 
