@@ -12,6 +12,7 @@ Depois de acessar a primeira vez a rota *https://localhost.com.br*, execute o sc
 
 Foi criado scripts para usar esses conteineres como serviços do Systemd. Pare os conteineres com o script *down.sh* e use o script *generate_service.sh* para criar o serviço do sistema. Use o comando *systemctl*(start|status|stop) para gerenciar o servico **nextcloud-btrfs.service**.
 
+Quando for usar o Nextcloud fora do localhost, deve-se alterar a variável 'overwritehost' do arquivo *data/nextcloud/config/config.php* de 'localhost:8083' para o 'endereço externo(IP):8083'. 
 
 ## Arquivos
 ```
