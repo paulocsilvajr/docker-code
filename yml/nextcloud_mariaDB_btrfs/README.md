@@ -1,4 +1,4 @@
-# Docker-compose para configurar um conteiner Nextcloud configurado com o banco de dados MariaDB, com volume em arquivo formatado como BTRFS e gerenciado via serviço do Systemd.
+# Docker-compose para configurar um conteiner Nextcloud configurado com o banco de dados MariaDB, com volume em arquivo formatado como BTRFS e gerenciado via serviço do Systemd. Conteineres configurados no Ubuntu 22.04+.
 
 Este repositório cria um conteiner Docker do [NextCloud](https://nextcloud.com/), baseado nos modelos apresentados no [Docker Hub do NextCloud](https://hub.docker.com/_/nextcloud), e um conteiner MariaDB para o banco de dados. Para isolar o armazenamento, foi criado um arquivo formatado como BTRFS, com armazenamento de 20GiB. Esse arquivo é montado, por padrão, na pasta 'data' do diretório atual. Com o formato BTRFS do volume é possivel criar snapshots dos subvolumes 'db' e 'nextcloud'.
 
