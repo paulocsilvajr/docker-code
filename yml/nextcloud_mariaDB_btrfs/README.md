@@ -8,7 +8,7 @@ Para a primeira inicialização, deve-se criar o volume 'volume.img' com o scrip
 
 Deve-se usar os scripts *up.sh* e *down.sh* para inicializar e parar os serviços, porque estes montam e desmontam o volume virtual da imagem BTRFS em pasta *data*.
 
-Depois de acessar a primeira vez a rota *https://localhost.com.br*, execute o script *./reconfigure_config.php.sh*, para que seja adicionado no arquivo de configuração do Apache(config.php) do Nextcloud as definições necessárias para o redirecionamento HTTPs via Nginx funcione. Reinicie os serviços do Nextcloud com os scripts *down.sh* e *up.sh* e acesse novamente a rota inicial.
+Depois de acessar a primeira vez a rota *https://localhost:8083*, execute o script *./reconfigure_config.php.sh*, para que seja adicionado no arquivo de configuração do Apache(config.php) do Nextcloud as definições necessárias para o redirecionamento HTTPs via Nginx funcione. Reinicie os serviços do Nextcloud com os scripts *down.sh* e *up.sh* e acesse novamente a rota inicial.
 
 Foi criado scripts para usar esses conteineres como serviços do Systemd. Pare os conteineres com o script *down.sh* e use o script *generate_service.sh* para criar o serviço do sistema. Use o comando *systemctl*(start|status|stop) para gerenciar o servico **nextcloud-btrfs.service**.
 
