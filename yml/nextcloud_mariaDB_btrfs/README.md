@@ -12,7 +12,7 @@ Depois de acessar a primeira vez a rota *https://localhost:8083*, execute o scri
 
 Foi criado scripts para usar esses conteineres como serviços do Systemd. Pare os conteineres com o script *down.sh* e use o script *generate_service.sh* para criar o serviço do sistema. Use o comando *systemctl*(start|status|stop) para gerenciar o servico **nextcloud-btrfs.service**.
 
-Quando for usar o Nextcloud fora do localhost, deve-se alterar a variável 'overwritehost' do arquivo *data/nextcloud/config/config.php* de 'localhost:8083' para o 'endereço externo(IP):8083'. 
+Quando for usar o Nextcloud fora do localhost, deve-se alterar a variável 'overwritehost' do arquivo *data/nextcloud/config/config.php* de 'localhost:8083' para o 'endereço externo(IP):8083'. Obs: lembre-se de habilitar a porta 8083 no firewall(ufw) com o comando *sudo ufw allow 8083*.
 
 ## Arquivos
 ```
