@@ -1,0 +1,4 @@
+https://rustdesk.com/docs/pt/self-host/rustdesk-server-oss/docker/
+https://rustdesk.com/docs/pt/self-host/rustdesk-server-oss/install/
+https://rustdesk.com/docs/pt/self-host/client-configuration/
+
